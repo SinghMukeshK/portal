@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, StatusBar, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, StatusBar, Text, View, ScrollView, TextInput } from 'react-native';
 
 import Card from './Card/Card.jsx'
 import Header from '../screens/Header';
@@ -13,7 +13,7 @@ export default function Jobs(props) {
     let jobs = jobService.getJobs();
 
     return (
-        <View>
+        <View style={{ flex: 1 }}>
             <Header />
             <StatusBar barStyle="light-content" backgroundColor="#6a51ae" />
             {/* <AdMobBanner

@@ -32,15 +32,31 @@ class Job {
             }],
             eligibilities: [{
                 name: 'Army Wing',
-                value: 'Passed/Appearing 10+2 Exam in any recognized board Passed/Appearing 10+2     Exam in any recognized board'
+                value: 'Passed/Appearing 10+2 exam in any recognized board'
             }, {
                 name: 'Air Force and Naval Wing',
-                value: 'Passed/Appearing 10+2 Exam in any recognized board'
+                value: 'Passed/Appearing 10+2 exam in any recognized board'
             }],
             stepsToFillForm: [
                 'Got to website',
                 'Open given link'
-            ]
+            ],
+            examDetails: [{
+                name: 'Exam Date',
+                value: '30 Aug 202'
+            }, {
+                name: 'Exam Time',
+                value: '1:00PM'
+            }, {
+                name: 'Subject',
+                value: 'Screening'
+            }],
+            links: [
+                { name: 'Download Assistant Registrar', value: 'www.google.com' },
+                { name: 'Download Assistant Registrar', value: 'www.google.com' },
+                { name: 'Download Assistant Registrar', value: 'www.google.com' },
+                { name: 'Download Assistant Registrar', value: 'www.google.com' },
+                { name: 'Download Assistant Registrar', value: 'www.google.com' }]
         }, {
             jobId: 2,
             jobTitle: 'UPPSC Assistant Registrar Result 2020',

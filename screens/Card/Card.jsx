@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { Constants } from 'expo';
 
 
@@ -21,18 +21,22 @@ export default function Card(props) {
                     <Feather name="aperture" size={40} color="black" />
                 </View>
                 <View style={{ paddingLeft: 2, paddingTop: 4 }}>
-                    <Text>{job.jobTitle}</Text>
-                    <Text style={styles.fontSmall}>Posted On: {job.jobDetail.postedOn}</Text>
+                    <Text style={{ fontStyle: "normal", fontWeight: "500" }}>{job.jobTitle}</Text>
+                    <Text style={styles.fontSmall}>Posted On: {job.jobDetail.postedOn} | Updated On: {job.jobDetail.updatedOn}</Text>
                 </View>
+                {/* <View style={{ paddingLeft: 20, paddingTop: 0 }}>
+                    <TouchableOpacity><Feather name="more-horizontal" size={25} color="black" /></TouchableOpacity>
+                </View> */}
             </View>
 
             <View style={styles.cardBody}>
                 <Text>{job.jobDetail.detailDescription}</Text>
-
-                {job.dates && <Dates dates={job.dates} />}
-                {job.vacancies && <Vacencies vacencies={job.vacencies} />}
-                {job.eligibilities && <Eligibility eligibilities={job.eligibilities} />}
-                {job.links && <Links eligibilities={job.links} />}
+                <View style={{ paddingTop: 5, paddingBottom: 5 }}><Image
+                    style={styles.logo}
+                    source={{
+                        uri: 'https://reactnative.dev/img/tiny_logo.png',
+                    }}
+                /></View>
             </View>
 
             <View style={styles.cardTrailer}>
@@ -52,22 +56,31 @@ const styles = StyleSheet.create({
         backgroundColor: "white"
     },
     cardheader: {
+        padding: 5,
         shadowColor: 'grey',
         shadowRadius: 1,
         flexDirection: "row",
-        backgroundColor: 'lightgrey',
-        borderRadius: 3
+        borderRadius: 3,
+        borderBottomColor: 'grey',
+        borderBottomWidth: .5,
     },
     cardBody: {
         minHeight: 100,
-        padding: 2,
+        padding: 5,
+        marginTop: 2,
+        paddingBottom: 10
 
     },
     cardTrailer: {
         flexDirection: "row",
+        borderBottomColor: 'grey',
+        borderTopWidth: .5,
+        margin: 10,
+        padding: 5
     },
     fontSmall: {
-        fontSize: 10
+        fontSize: 11,
+        fontWeight: "200"
     },
     datesName: {
         textAlign: "right"
@@ -75,5 +88,13 @@ const styles = StyleSheet.create({
     datesValue: {
         textAlign: "left"
 
-    }
+    },
+    tinyLogo: {
+        width: 50,
+        height: 50,
+    },
+    logo: {
+        width: 350,
+        height: 200
+    },
 })

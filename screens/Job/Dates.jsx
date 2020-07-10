@@ -9,13 +9,13 @@ export default function Dates({ dates }) {
             {
                 dates.map(date => {
                     return (
-                        <View>
-                            <View style={styles.date}>
-                                <Text style={{ textAlign: "right" }}>{date.name}</Text>
-                            </View>)
-                         <View style={styles.date}>
-                                <Text style={{ textAlign: "left" }}>{date.value}</Text>
+                        <View syle={{ flex: 1, flexDirection: "row" }}>
+                            {/* <View style={styles.dateRight}>
+                                <Text>{date.name}</Text>
                             </View>
+                            <View style={styles.dateLeft}>
+                                <Text>{date.value}</Text>
+                            </View> */}
                         </View>)
                 })}
         </View>
@@ -23,7 +23,10 @@ export default function Dates({ dates }) {
 }
 
 const styles = StyleSheet.create({
-    date: {
-        alignSelf: "flex-end"
+    dateLeft: {
+
+    },
+    dateRight: {
+
     }
 })
