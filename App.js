@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { Entypo, EvilIcons, MaterialIcons } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -53,7 +54,16 @@ function Home() {
 function Root() {
   return (
     <Stack.Navigator >
-      <Stack.Screen name="JobDetail" component={JobDetail} />
+      <Stack.Screen
+        name="JobDetail"
+        component={JobDetail}
+        options={{
+          headerLeft: (props) => (
+            <TouchableOpacity onPress={() => alert(JSON.stringify(props))}>
+              <MaterialIcons name="arrow-back" size={30} color="black" />
+            </TouchableOpacity>
+          ),
+        }} />
       <Stack.Screen name="Settings" component={Settings} />
     </Stack.Navigator>
   );
