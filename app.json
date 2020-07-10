@@ -1,0 +1,10 @@
+{
+  "name": "thejobportalapp",
+  "displayName": "the-job-portal-app",
+  "expo": {
+    "name": "thejobportalapp",
+    "slug": "expo-template-bare",
+    "version": "1.0.0",
+    "assetBundlePatterns": ["**/*"]
+  }
+}
